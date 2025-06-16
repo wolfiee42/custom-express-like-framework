@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-core-stackLearner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "ts-alias": "^0.0.7",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  }
+}
