@@ -18,7 +18,7 @@ export interface Request {
 }
 
 export interface Response {
-  nodeRes: ServerResponse;
+  nodeRes: ServerResponse<IncomingMessage>;
   statusCode: number;
   headers: Record<string, string>;
   status(code: number): this;
