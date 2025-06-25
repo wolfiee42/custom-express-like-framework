@@ -10,6 +10,7 @@ export class Server extends EventEmitter {
     this.server = createServer(this.handleRequest.bind(this));
   }
 
+  // method to start the server
   private async handleRequest(
     nodeReq: IncomingMessage,
     nodeRes: ServerResponse<IncomingMessage>
@@ -35,9 +36,8 @@ export class Server extends EventEmitter {
     this.emit("request:processed");
   }
 
+  // method
   listen(port: number, cb?: () => void) {
     this.server.listen(port, cb);
   }
 }
-
-new Server();
