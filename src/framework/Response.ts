@@ -5,18 +5,18 @@ export class ResponseImpl implements Response {
     statusCode: number = 200;
     headers: Record<string, string> = {};
 
-    constructor(public nodeRes: ServerResponse<IncomingMessage>) {
-
-    }
+    constructor(public nodeRes: ServerResponse<IncomingMessage>) { }
 
     status(code: number): this {
         this.statusCode = code;
         return this;
     }
+
     setHeader(key: string, value: string): this {
         this.headers[key] = value;
         return this;
     }
+
     send(body?: string | object | Buffer | null): this {
         if (this.nodeRes.writableEnded) return this;
 
@@ -41,6 +41,7 @@ export class ResponseImpl implements Response {
         return this;
 
     }
+
     json(body: object): this {
         this.setHeader('Content-Type', 'application/json');
         this.nodeRes.writeHead(this.statusCode, this.headers);
